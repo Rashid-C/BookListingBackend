@@ -18,6 +18,10 @@ const bookSchema = new mongoose.Schema({
     type: String,
     unique: true,
   },
+  image:{
+    type:String,
+    default:"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?semt=ais_hybrid",
+  },
 });
 
 bookSchema.pre("save", function (next) {

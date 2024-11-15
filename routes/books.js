@@ -5,7 +5,7 @@ import Book  from '../models/Book.js';
 
 const router = express.Router();
 
-// Example route to get all books
+
 router.get('/', async (req, res) => {
   try {
     const books = await Book.find();
@@ -15,21 +15,19 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Other routes for books...
 
 
 
 
-// Add a new book
+
+
 router.post("/", async (req, res) => {
   const newBook = new Book(req.body);
   const savedBook = await newBook.save();
   res.status(201).json(savedBook);
 });
 
-// Delete a book by ID
-// Delete a book by ID
-// Delete a book by ID
+
 router.delete("/:id", async (req, res) => {
     try {
       const deletedBook = await Book.findByIdAndDelete(req.params.id);
